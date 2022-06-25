@@ -1,5 +1,5 @@
 # ReLMole
-Supplement of code for "ReLMole: Molecular Representation Learning based on Two-Level Graph Similarity"
+Supplement of code for "ReLMole: Molecular Representation Learning based on Two-Level Graph Similarities"
 
 ## Requirements
 We implement our model on `Python 3.7`. These packages are mainly used:
@@ -24,7 +24,7 @@ We use 250k "lead-like" compounds from [ZINC15](https://zinc15.docking.org), whi
 We load MoleculeNet datasets using DeepChem package.
 
 #### 3. DDI datasets
-We download the datasets from [MIRACLE](https://github.com/isjakewong/MIRACLE/tree/main/MIRACLE/datachem).
+We download the DDI datasets from [CASTER](https://github.com/kexinhuang12345/CASTER). The splitting results used in ReLMole are available in directory `data/DDI`
 
 
 ## Experiments
@@ -39,7 +39,5 @@ Run `pretrain_cl.py` to pre-train ReLMole and the pre-trained model will be save
 
 #### 4. Fine-tuning
 For the molecular property prediction task, run `task_property/run_${dataset}.py` to fine-tune the pre-trained model. \
-For the DDI prediction task, run `task_ddi/run_${dataset}.py` to fine-tune the pre-trained model.
-
-
-
+For the DDI prediction task, run `task_ddi/run_ddi.py` to fine-tune the pre-trained model. \
+We apply fine-tuned models for each dataset in directory `finetuned`.
